@@ -1,0 +1,220 @@
+/* ==== INDEX === */
+/* 
+1.0 GLOBAL
+2.0 CONTACT
+ 2.1 img showing cute pets!
+ 2.2 Main Contact 
+3.0 BRANDS
+ 3.1 Carousel
+ 3.2 Brands
+  3.2.1 Dedicated brands and products Perros&Gatos
+4.0 Media Queries
+*/
+.fuckoff {
+    margin-top: 25%;
+}
+
+/* === 1.0 GLOBAL === */
+:root {
+    --white: #f8f9fa;
+    --transparentWhite: rgba(248, 249, 250, 0.8);
+}
+.padd-top {
+    padding-top: 9.7rem;
+}
+
+/* === 2.0 CONTACT === */
+/* 2.1 Img showing cute pets */
+.img-cont img{
+   width: 100%;
+   object-fit: cover;
+   object-position: top;
+}
+/* 2.2 Main Contact */
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 0;
+}
+.or {
+    display: flex;
+    flex-direction: row;
+}
+.or :nth-child(1) {
+    order: 2;
+}
+.or :nth-child(2){
+    order: 1;
+}
+.map-container {
+    padding-top: 1rem;
+}
+.map {
+    width: 45vh;
+    height: 60vh;
+}
+.info-cont ul {
+    padding: 1rem;
+
+}
+.contact-container {
+    padding-bottom: 1rem;
+}
+.contact-container img{
+    width: 40%;
+    display: none;
+}
+
+/* === 3.0 BRANDS === */
+/* 3.1 Carousel */
+.carousel-container {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 2rem;
+}
+.slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    /* border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem; */
+    width: 100%;
+    min-height: 5rem;
+}
+.slider .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+.slider .slide.active {
+    clip-path: circle(150% at 0 50%);
+    /* transition: .5s ease-in; */
+}
+.slider .slide img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider .slide .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    color:  var(--transparentWhite);
+    background: rgba(0, 0, 0, .5);
+    width: 70%;
+    padding: 1rem;
+    top: 5%;
+    left: 10%;
+    border-radius: 2rem;
+    box-shadow: 0 .5rem 2.5rem rgba(1 1 1 / 5%);
+}
+.slider .slide .info h2,
+.slider .slide .info p {
+    margin: 0.2rem;
+}
+.slider .slide .info h2 {
+    padding: 0;
+}
+.slider .slide .info p {
+    padding: .8rem;
+    font-size: 1.9rem;
+}
+.navigation {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.prev-btn,
+.next-btn {
+    font-size: 3.8rem;
+    color: rgba(33, 37, 41, .5);
+    background: rgba(248, 249, 250, .3);
+    padding: .5rem;
+    cursor: pointer;
+}
+.prev-btn {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+}
+.next-btn {
+    border-top-left-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+}
+.navigation-visibility {
+    z-index: 100;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 92%;
+}
+.navigation-visibility .slide-icon {
+    z-index: 100;
+    background: rgba(248, 249, 250, .5);
+    width: 2rem;
+    height: 1rem;
+    margin: 0 .6rem;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 2.5rem rgb(1 1 1 /20%);
+}
+.navigation-visibility .slide-icon.active {
+    background: rgba(52, 58, 64, .7);
+}
+/* 3.2 Brands */
+.brands-background {
+    background-image: url(https://images.unsplash.com/photo-1602979677071-1781b7f40023?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2550&q=80);
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 0.1rem;
+}
+.brands-background h1 {
+    color: rgba(52, 58, 64, .9);
+}
+.brands-container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.brand {
+    padding: 2rem;
+    cursor: pointer;
+}
+.brand img {
+    width: 10rem;
+    border-radius: 50%;
+    box-shadow: 0 .5rem 2.5rem rgba(255, 255, 255, .1);
+}
+.brand p {
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+}
+/* 4.0 Media Queries */
+@media screen and (min-width: 600px) {
+    .map-container .map {
+        width: 100%;
+        height: 90%;
+        margin-top: 5%;
+    }
+}
+@media screen and (max-width: 999px) {
+    .brands-container.pets {
+        flex-wrap: nowrap;
+        justify-content: unset;
+        overflow-x: auto;
+    }
+}
+@media screen and (max-width: 370px) {
+    .slider .slide .info p {
+        font-size: 1.5rem;
+    }
+}
