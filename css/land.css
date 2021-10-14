@@ -61,7 +61,8 @@ header {
 }
 .logo {
     display: block;
-    margin: 0 auto
+    margin: 0 auto;
+    width: 7.5rem;
 }
 .logo-txt {
     display: inline-block;
@@ -118,7 +119,7 @@ nav {
 .welcome-container {
     display: flex;
     padding: 9.8rem 1rem 2rem 1rem;
-    background-image: url(/img/alec-favale-Ivzo69e18nk-unsplash.jpg);
+    background-image: url(/img/alec-favale-Ivzo69e18nk-unsplash-min.jpg);
     width: 100%;
     background-position: center;
     background-size: cover;
